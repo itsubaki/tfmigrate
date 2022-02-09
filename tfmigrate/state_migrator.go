@@ -124,10 +124,15 @@ func (m *StateMigrator) plan(ctx context.Context) (*tfexec.State, error) {
 
 	// build plan options
 	planOpts := []string{"-input=false", "-no-color", "-detailed-exitcode"}
+	if m.o.PlanOption != "" {
+		planOpts = append(planOpts, m.o.PlanOption)
+	}
+
 	if m.o.PlanOut != "" {
 		planOpts = append(planOpts, "-out="+m.o.PlanOut)
 	}
 
+	log.Printf("[INFO] [migrator@%s] planOpts=%v\n", m.tf.Dir(), planOpts)
 	log.Printf("[INFO] [migrator@%s] check diffs\n", m.tf.Dir())
 	_, err = m.tf.Plan(ctx, currentState, planOpts...)
 	if err != nil {

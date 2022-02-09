@@ -44,6 +44,7 @@ func newConfig(filename string) (*config.TfmigrateConfig, error) {
 
 func newOption() *tfmigrate.MigratorOption {
 	return &tfmigrate.MigratorOption{
-		ExecPath: os.Getenv("TFMIGRATE_EXEC_PATH"),
+		ExecPath:   os.Getenv("TFMIGRATE_EXEC_PATH"),
+		PlanOption: os.Getenv("TFMIGRATE_PLAN_OPTION"),
 	}
 }

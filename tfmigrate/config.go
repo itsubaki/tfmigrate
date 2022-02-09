@@ -27,4 +27,7 @@ type MigratorOption struct {
 
 	// PlanOut is a path to plan file to be saved.
 	PlanOut string
+
+	// PlanOption is option to exec terraform
+	PlanOption string
 }
