@@ -1,5 +1,16 @@
 ## master (Unreleased)
 
+ENHANCEMENTS:
+
+* Update Go to v1.17.8 and Alpine to 3.15 ([#78](https://github.com/minamijoyo/tfmigrate/pull/78))
+* Move storage implementations to a new package ([#79](https://github.com/minamijoyo/tfmigrate/pull/79))
+
+## 0.3.2 (2022/03/15)
+
+ENHANCEMENTS:
+
+* Support Terraform Cloud as a remote backend in Terraform 1.1.+ with the `cloud` block ([#76](https://github.com/minamijoyo/tfmigrate/pull/76))
+
 ## 0.3.1 (2022/01/26)
 
 ENHANCEMENTS:
